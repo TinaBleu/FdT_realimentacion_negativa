@@ -15,3 +15,13 @@ i) Incluir un controlador proporcional integral y derivativo (PID) y obtener los
 constantes KP, KI y KD necesarios para que la respuesta tenga la mejor respuesta posible
 sin oscilaciones, sin error y el tiempo de respuesta sea lo más reducido posible
 
+READ  FREAKING ME
+
+Si, todo está en .txt para que sólo copien y peguen :v
+Esta hecho para la version 2020b de Matlab, asi que CHEQUEN SU VERSIÓN DE MATLAB para que no les saque errores :) 
+
+NOTAS TEÓRICAS:
+
+(Si, también necesitan saber el procedimiento teórico para comprender los resultados; algunas partes del codigo contienen step() 
+para obtener graficas con escalon unitario, pero pueden insertar otro tipo de pulsos como rampa.)
+
