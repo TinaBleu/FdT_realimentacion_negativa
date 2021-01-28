@@ -1,0 +1,23 @@
+s=tf('s') 
+
+%Escribimos la función de transferencia
+G=(600*(s+0.9))/((s+3)*((s^2)+(6*s)+13)*((s^2)+(10*s)+34))
+
+%Obtenemos la función de transferencia de lazo cerrado
+FdT=G/(1+G)
+
+%Simplificamos
+FdT=minreal(FdT)
+
+%Para el escalon unitario
+step(FdT)
+
+%Obtenemos polos y ceros con su respectiva grafica de la funcion de
+%transferencia de lazo abierto
+zpk(G)
+pole(G)
+zero(G)
+pzmap(G)
+
+%Obtenemos raices para saber el tipo de escalon de FdT 
+roots([1 19 155 655 2044 1866]

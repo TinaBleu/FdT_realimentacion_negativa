@@ -1,0 +1,34 @@
+ syms k s
+
+%Declaramos la función junto con la ganancia como "k"
+ G=(k*(600*(s +0.9)))/((s+3)*((s^2)+(6*s)+13)*((s^2)+(10*s)+34))
+ pretty(G)
+
+%Incluimos H por la retroalimentación
+ H=1
+
+%Tenemos la funcion de transferencia con ganancia
+ FdT=G/(1+G*H)
+ FdT=expand(FdT)
+ FdT=collect(FdT)
+ pretty(FdT)
+ 
+ %Establecemos k y obtenemos las raices. Para k=0 tenemos:
+ k=0
+ roots([1 19 155 655 (600*k+144) (540*k+1326)])
+ 
+ %Para k=1
+ k=1
+ roots([1 19 155 655 (600*k+144) (540*k+1326)])
+ 
+ %Para k=2
+ k=2
+ roots([1 19 155 655 (600*k+144) (540*k+1326)])
+ 
+ %Ahora vamos a pasar al dominio de Laplace
+ s=tf('s')
+ G=(600*(s+0.9))/((s+3)*((s^2)+(6*s)+13)*((s^2)+(10*s)+34))
+ 
+ %Para graficar nuestras raices en el lugar geométrico
+ rlocus(G)
+ 

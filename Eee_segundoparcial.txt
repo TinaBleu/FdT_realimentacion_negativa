@@ -1,0 +1,16 @@
+s=tf('s') 
+
+%Escribimos la función de transferencia
+G=(600*(s+0.9))/((s+3)*((s^2)+(6*s)+13)*((s^2)+(10*s)+34))
+
+%Obtenemos la función de transferencia de lazo cerrado
+FdT=G/(1+G)
+
+%Simplificamos
+FdT=minreal(FdT)
+
+%Incluimos H como 1 y calculamos el error en estado estable con dcgain
+H=1
+C1=feedback (G,H,-1)
+step(C1)
+eee=1-dcgain(C1)

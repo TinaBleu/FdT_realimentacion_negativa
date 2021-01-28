@@ -1,0 +1,15 @@
+s=tf('s') 
+
+%Escribimos la función de transferencia
+G=(600*(s+0.9))/((s+3)*((s^2)+(6*s)+13)*((s^2)+(10*s)+34))
+
+%Pasamos G a polos y ceros
+zpk(G)
+
+%Vamos a tomar los términos como fracciones parciales
+A=1/(S+3)
+step(A)
+B=1/((s^2)+(6*s)+13)
+step(B)
+C=1/((s^2)+(10*s)+34)
+step(C)
